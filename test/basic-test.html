@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <!-- Step 1: import the element to test -->
+    <link rel="import" href="../transburger-icon.html">
+  </head>
+  <body>
+
+    <!-- You can use the document as a place to set up your fixtures. -->
+    <transburger-icon id="myEl"></transburger-icon>
+
+    <script>
+    suite('<transburger-icon> tag', function() {
+      var myEl;
+
+      suiteSetup(function() {
+          myEl = document.querySelector('#myEl');
+      });
+
+      suiteTeardown(function() {
+          myEl.remove();
+      });
+
+      suite('in general', function() {
+        test('should be in document', function() {
+          expect(myEl).not.to.be.undefined;
+        });
+
+        test('should have welcome property', function() {
+          expect(myEl.properties).to.have.property('welcome').that.is.an('Object');
+        });
+      });
+    });
+    </script>
+  </body>
+</html>

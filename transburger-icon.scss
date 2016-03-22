@@ -1,0 +1,18 @@
+@import "../cells-sass/main";
+:host {
+  //Styling
+  min-height: 100%;
+  color: var(--text-primary, #0065b7);
+  background-color: var(--background-primary);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+img{
+  max-width: 30vw;
+}
+:host {
+  @apply(--transburger-icon);
+}

@@ -1,0 +1,9 @@
+bower_components
+components
+node_modules
+.DS_Store
+
+# cellsjs validator
+
+cells.log
+coverage

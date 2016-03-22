@@ -1,0 +1,44 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="transburger-icon-styles.html">
+
+<!--
+`<transburger-icon>` description.
+
+Example:
+
+```html
+<transburger-icon></transburger-icon>
+```
+
+## Data model
+[comment]: <> (use either one of the data model docs examples)
+
+Canonical DM: 'entityName', [one from list of entities]
+
+Component own DM example:
+```json
+{}
+```
+
+## Styling
+
+The following custom properties and mixins are available for styling:
+
+| Custom property | Description     | Default        |
+|:---------------:|:---------------:| :-------------:|
+| --your-var      | var description | default value  |
+| --transburger-icon  | empty mixin     | {}             |
+
+@demo demo/index.html
+-->
+<dom-module id="transburger-icon">
+  <template>
+    <style include="transburger-icon-styles"></style>
+    
+    <h1>Welcome to {{project.title}}</h1>
+    
+     <img src="{{project.image}}" alt="">
+    <content></content>
+  </template>
+  <script src="transburger-icon.js"></script>
+</dom-module>
