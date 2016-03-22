@@ -2,6 +2,8 @@
 
 Transburger Icon is a [Custom Element](http://webcomponents.org/articles/introduction-to-custom-elements/) that extends a standard `<button>` tag to display a **hamburger icon that is transformed into a back or close icon** after clicking the button or programmatically using its `toggleIcon()` method.
 
+![Transburger Icon Demos](transburger-icon-demos.gif)
+
 ## Demo
 
 [Demo and code samples](http://)
