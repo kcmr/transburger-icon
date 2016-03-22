@@ -44,6 +44,18 @@ $em-base: 14;
 }
 
 // ---------------------------------
+// wrapper
+// ---------------------------------
+.t-icon-wrapper {
+  display: flex;
+  align-items: center;
+
+  :host([icon-position="right"]) & {
+    flex-direction: row-reverse;
+  }
+}
+
+// ---------------------------------
 // hamburger icon
 // ---------------------------------
 .t-icon {

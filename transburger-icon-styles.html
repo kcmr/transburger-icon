@@ -8,6 +8,18 @@
     padding: 0;
     border: 0; }
 
+.t-icon-wrapper {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  :host([icon-position="right"]) .t-icon-wrapper {
+    -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse; }
+
 .t-icon {
   font-size: var(--transburger-icon-height, 14px);
   width: var(--transburger-icon-width, 1.42857em);
