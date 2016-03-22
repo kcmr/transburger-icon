@@ -2,42 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo transburger-icon</title>
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-
     <link rel="import" href="../../polymer/polymer.html">
-<!-- Add theme-->
-    <!-- Example: -->
-    <!-- (Remember to add the dependency into bower.json file) -->
-    <!-- <link href='../../bbva-ui-theme/bbva-ui-theme.html' rel="import">-->
- <!-- End theme-->
     <link rel="import" href="../transburger-icon.html">
-    <link rel="import" href="../../cells-ui-demo-mobile/cells-ui-demo-mobile.html">
-    <style>
-      html, body {
-        height: 100%;
-      }
-      body {
-        margin: 0;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      *, *:before, *:after {
-        -webkit-tap-highlight-color: transparent; }
-
-    </style>
-
   </head>
   <body ontouchstart>
-
-    <cells-ui-demo-mobile>
-      <transburger-icon project='{"title": "Cells", "image": "../images/cells.svg"}'></transburger-icon>
-    </cells-ui-demo-mobile>
-
+    <button is="transburger-icon"></button>
+    <button is="transburger-icon" transform-to="back"></button>
     <script src="js/demo.js"></script>
   </body>
 </html>
