@@ -2,12 +2,18 @@
 <link rel="import" href="transburger-icon-styles.html">
 
 <!--
-`<button is="transburger-icon"></button>` is a button that shows a hamburger icon that is transformed into a back or close icon when the button is clicked.
+## &lt;button is="transburger-icon"&gt;&lt;/button&gt;
+
+Transburger Icon is a Custom Element that extends a native `<button>` to display a hamburger icon that is transformed into a back or close icon after clicking the button or programmatically using its `toggleIcon()` method.
+
+By default the hamburger icon is transformed into a close icon when the button is clicked. Other posible transformations are `arrow-left` and `arrow-right`.
+
+To prevent changing the icon when the button is clicked, add `no-transform` attribute.
 
 Example:
 
 ```html
-<button is="transburger-icon" transform-to="back"></button>
+<button is="transburger-icon" transform-to="arrow-left"></button>
 ```
 
 Example with text:
@@ -20,10 +26,12 @@ Example with text:
 
 The following custom properties and mixins are available for styling:
 
-| Custom property | Description     | Default        |
-|:---------------:|:---------------:| :-------------:|
-| --your-var      | var description | default value  |
-| --transburger-icon  | empty mixin     | {}             |
+| Custom property                | Description                     | Default        |
+|:-------------------------------|:--------------------------------| :--------------|
+| --transburger-icon-height      | Icon height in pixels           | 14px           |
+| --transburger-icon-width       | Icon width                      | 1.42857em      |
+| --transburger-icon-margin      | Vertical and horizontal margins | 0.85714em      |
+| --transburger-icon-line-radius | Hamburger icon lines radius     | 2px            |
 
 @demo demo/index.html
 -->
