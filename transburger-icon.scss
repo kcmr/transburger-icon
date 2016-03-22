@@ -82,14 +82,20 @@ $em-base: 14;
   }
 
   // ---------------------------------
-  // menu to back
+  // menu to arrow-<left|right>
   // ---------------------------------
-  &--back {
+  &--arrow-left,
+  &--arrow-right {
     &::before,
     &::after {
       transition: transform .2s cubic-bezier(.51, .2, .31, .85);
     }
+  }
 
+  // ---------------------------------
+  // menu to arrow-left
+  // ---------------------------------
+  &--arrow-left {
     &.is-active {
       &::before {
         transform: translate3d(em(-5), calc(1em / 7), 0) rotate(-40deg) scaleX(.7);
@@ -97,6 +103,21 @@ $em-base: 14;
 
       &::after {
         transform: translate3d(em(-5), calc(-1em / 7), 0) rotate(40deg) scaleX(.7);
+      }
+    }
+  }
+
+  // ---------------------------------
+  // menu to arrow-right
+  // ---------------------------------
+  &--arrow-right {
+    &.is-active {
+      &::before {
+        transform: translate3d(em(5), calc(1em / 7), 0) rotate(40deg) scaleX(.7);
+      }
+
+      &::after {
+        transform: translate3d(em(5), calc(-1em / 7), 0) rotate(-40deg) scaleX(.7);
       }
     }
   }
