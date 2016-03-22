@@ -13,6 +13,15 @@
   }
 }
 
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  $base: 16;
+  @return ($pxval / $base) * 1rem;
+}
+
 // ---------------------------------
 // <button> tag style normalization
 // ---------------------------------
