@@ -34,11 +34,14 @@ The following custom properties and mixins are available for styling:
 <dom-module id="transburger-icon">
   <template>
     <style include="transburger-icon-styles"></style>
-    
-    <h1>Welcome to {{project.title}}</h1>
-    
-     <img src="{{project.image}}" alt="">
-    <content></content>
+
+    <div class="wrapper">
+      <div class="t-icon" id="icon">
+        <div class="t-icon__middle"></div>
+      </div>
+
+      <content></content>
+    </div>
   </template>
   <script src="transburger-icon.js"></script>
 </dom-module>
