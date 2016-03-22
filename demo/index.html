@@ -8,65 +8,81 @@
     <link rel="import" href="../transburger-icon.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
     <link rel="stylesheet" href="css/demo.css">
+    <style is="custom-style">
+      demo-snippet {
+        --demo-snippet: {
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 4px 0 rgba(0, 0, 0, 0.12), 0 2px 1px -2px rgba(0, 0, 0, 0.2);
+          border-radius: 4px;
+          overflow: hidden;
+        };
+
+        --demo-snippet-demo: {
+          text-align: center;
+        };
+      }
+    </style>
   </head>
   <body ontouchstart>
     <div class="wrapper">
       <demo-snippet>
-        <h2>Transform to close (default)</h2>
+        <div class="demo-snippet-text">
+          <h2>Transform to close (default)</h2>
+        </div>
         <template>
           <button is="transburger-icon"></button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
-        <h2>Transform to arrow left</h2>
+        <div class="demo-snippet-text">
+          <h2>Transform to arrow</h2>
+        </div>
         <template>
           <button is="transburger-icon" transform-to="arrow-left"></button>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <h2>Transform to arrow right</h2>
-        <template>
           <button is="transburger-icon" transform-to="arrow-right"></button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
-        <h2>Active</h2>
+        <div class="demo-snippet-text">
+          <h2>Active</h2>
+        </div>
         <template>
           <button is="transburger-icon" transform-to="arrow-right" active></button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
-        <h2>With text</h2>
+        <div class="demo-snippet-text">
+          <h2>With text</h2>
+          <p>You need to set padding left or right.</p>
+        </div>
         <template>
-          <button is="transburger-icon">Button text</button>
+          <button is="transburger-icon" class="padding-right">Button text</button>
+          <button is="transburger-icon" icon-position="right" class="padding-left">Button text</button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
-        <h2>With text and icon placed to the right</h2>
-        <template>
-          <button is="transburger-icon" icon-position="right">Button text</button>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <h2>Don't transform on click</h2>
+        <div class="demo-snippet-text">
+          <h2>Don't transform on click</h2>
+        </div>
         <template>
           <button is="transburger-icon" no-transform></button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
-        <h2>With custom style and sizes</h2>
+        <div class="demo-snippet-text">
+          <h2>With custom style and sizes</h2>
+          <p>The icon is sized using ems, so all the icon elements are scaled proportionally when you set the icon height. You can use a size in pixels or the <code>inherit</code> keyword to use the button font size.</p>
+          <p>The icon color is the same as the button text color.</p>
+        </div>
         <template>
           <style is="custom-style">
-            .icon-size-21 { --transburger-icon-height: inherit; font-size: 21px; }
-            .icon-size-28 { --transburger-icon-height: 28px; font-size: 28px; }
-            .icon-size-35 { --transburger-icon-height: 35px; font-size: 35px; }
+            .icon-size-21 { --transburger-icon-height: 21px; }
+            .icon-size-28 { --transburger-icon-height: 28px; }
+            .icon-size-35 { --transburger-icon-height: inherit; font-size: 35px; }
           </style>
 
           <button is="transburger-icon" class="btn icon-size-21"></button>
