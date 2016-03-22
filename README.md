@@ -1,32 +1,67 @@
 # Transburger Icon
 
-Transburger Icon is a Custom Element that extends a native `<button>` tag to display a transformable hamburger menu icon. By default the menu icon is transformed into a close icon.
+Transburger Icon is a [Custom Element](http://webcomponents.org/articles/introduction-to-custom-elements/) that extends a standard `<button>` tag to display a **hamburger icon that is transformed into a back or close icon** after clicking the button or programmatically using its `toggleIcon()` method.
 
-**Example with default values**
+## Demo
 
-The menu icon is transformed into a close icon and the icon is positioned to the left of the button text.
+[Demo and code samples](http://)
 
-```html
-<button is="transburger-icon">Button text</button>
+## Install
+
+Install the component using [Bower](http://bower.io/):
+
+```bash
+$ bower install kcmr/transburger-icon --save
 ```
 
-**Menu to back**
+## Usage
 
-```html
-<button is="transburger-icon" transform-to="back"></button>
+Import Web Components polyfill:
+
+```js
+<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 ```
 
-**Icon positioned to the right**
+Import Custom Element:
 
 ```html
-<button is="transburger-icon" icon-position="right">Button text</button>
+<link rel="import" href="bower_components/transburger-icon/transburger-icon.html"> 
 ```
+
+Use it!:
+
+```html
+<button is="transburger-icon"></button>
+```
+
+## Attributes
+
+| Attribute | Description | Default |
+|:----------|:------------|:--------|
+| transform-to | Hamburger icon transformation (close, arrow-left, arrow-right) | close |
+| icon-position | Icon position (left, right) | left |
+| active | Boolean attribute to display the second icon initially | false |
+| no-transform | Boolean attribute to disable the icon transformation on click | false |
+
+## Methods
+
+| Method | Description |
+|:-------|:------------|
+| toggleIcon() | Changes the icon |
+
+## Events
+
+| Event name | Description |
+|:-----------|:------------|
+| transburger-icon-changed | Fired when the icon is changed |
 
 ## Styling
 
 The following custom properties and mixins are available for styling:
 
-| Custom property | Description     | Default        |
-|:----------------|:----------------| :--------------|
-| --your-var      | var description | default value  |
-| --transburger-icon  | empty mixin     | {}             |
+| Custom property                | Description                                                    | Default        |
+|:-------------------------------|:---------------------------------------------------------------| :--------------|
+| --transburger-icon-height      | Icon height in pixels. For better results, use multiples of 7  | 14px           |
+| --transburger-icon-width       | Icon width                                                     | 1.42857em      |
+| --transburger-icon-margin      | Vertical and horizontal margins                                | 0.85714em      |
+| --transburger-icon-line-radius | Hamburger icon lines radius                                    | 2px            |
