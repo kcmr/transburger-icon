@@ -1,16 +1,16 @@
 {
   "name": "transburger-icon",
   "version": "0.1.0",
-  "description": "Your component description",
+  "description": "A button with a transformable hamburger menu icon",
   "keywords": [
-    "i18n"
+    "web-components",
+    "polymer",
+    "button"
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.2.0"
   },
   "devDependencies": {
-    "cells-sass": "https://descinet.bbva.es/stash/scm/cel/cells-sass.git#^1.0.0",
-    "cells-ui-demo-mobile": "https://descinet.bbva.es/stash/scm/celcom/cells-ui-demo-mobile.git",
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "web-component-tester": "^3.0.0"
   },
