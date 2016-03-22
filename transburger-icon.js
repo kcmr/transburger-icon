@@ -6,7 +6,7 @@ Polymer({
   properties: {
     /**
      * Hamburger icon transformation.
-     * Possible values: `close`, `back`.
+     * Possible values: `close`, `arrow-left`, `arrow-right`.
      */
     transformTo: {
       type: String,
@@ -26,17 +26,29 @@ Polymer({
     },
 
     /**
-     * If true, the second icon (close or back) will be shown initially.
+     * If true, the second icon will be shown initially.
      */
     active: {
       type: Boolean,
       value: false,
       observer: '_activeObserver'
+    },
+
+    /**
+     * If true, the icon won't be changed after clicking the button.
+     * Use this attribute to change the icon programmatically.
+     */
+    noTransform: {
+      type: Boolean,
+      value: false,
+      observer: '_noTransformObserver'
     }
   },
 
-  listeners: {
-    'click': 'toggleIcon'
+  detached: function() {
+    if (!this.noTransform) {
+      this.unlisten(this, 'click', 'toggleIcon');
+    }
   },
 
   toggleIcon: function() {
@@ -52,5 +64,13 @@ Polymer({
     this.fire('transburger-icon-changed', {
       icon: this.active ? this.transformTo : 'menu'
     });
+  },
+
+  _noTransformObserver: function() {
+    if (this.noTransform) {
+      this.unlisten(this, 'click', 'toggleIcon');
+    } else {
+      this.listen(this, 'click', 'toggleIcon');
+    }
   }
 });
