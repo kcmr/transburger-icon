@@ -1,18 +1,130 @@
-@import "../cells-sass/main";
-:host {
-  //Styling
-  min-height: 100%;
-  color: var(--text-primary, #0065b7);
-  background-color: var(--background-primary);
+// ---------------------------------
+// mixins
+// ---------------------------------
+@mixin elem($block, $elem) {
+  #{$block}__#{$elem} {
+    @content;
+  }
+}
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+@mixin mod($block, $modifier) {
+  #{$block}--#{$modifier} {
+    @content;
+  }
 }
-img{
-  max-width: 30vw;
-}
+
+// ---------------------------------
+// <button> tag style normalization
+// ---------------------------------
 :host {
-  @apply(--transburger-icon);
+  border: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
 }
+
+// ---------------------------------
+// hamburger icon
+// ---------------------------------
+.t-icon {
+  $block: &;
+
+  width: 20px;
+  height: 14px;
+  margin: 12px;
+  color: currentColor;
+  position: relative;
+
+  &__middle,
+  &::after,
+  &::before {
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    border-radius: 4px;
+    position: absolute;
+    margin: auto;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+  }
+
+  &::before { top: 0; }
+  &::after { bottom: 0; }
+
+  &__middle {
+    top: 0;
+    bottom: 0;
+  }
+
+  // ---------------------------------
+  // menu to back
+  // ---------------------------------
+  &--back {
+    &::before,
+    &::after {
+      transition: transform .2s cubic-bezier(.51, .2, .31, .85);
+    }
+
+    &.is-active {
+      &::before {
+        transform: translate3d(-5px, 2px, 0) rotate(-40deg) scaleX(.7);
+      }
+
+      &::after {
+        transform: translate3d(-5px, -2px, 0) rotate(40deg) scaleX(.7);
+      }
+    }
+  }
+
+  // ---------------------------------
+  // menu to close
+  // ---------------------------------
+  &--close {
+    &::before,
+    &::after {
+      transform: rotate(0);
+    }
+
+    &::before {
+      bottom: calc(100% - 2px);
+      transition: transform .2s ease, bottom .2s .24s ease;
+    }
+
+    &::after {
+      top: calc(100% - 2px);
+      transition: transform .2s ease, top .2s .24s ease;
+    }
+
+    @include elem($block, 'middle') {
+      transition: opacity .2s;
+    }
+
+    &.is-active {
+      @include elem($block, 'middle') {
+        opacity: 0;
+      }
+
+      &::before {
+        bottom: 0;
+        transform: rotate(45deg);
+        transition: bottom .2s ease, transform .2s .24s ease;
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+        transition: top .2s ease, transform .2s .24s ease;
+      }
+    }
+  }
+}
+
