@@ -44,15 +44,15 @@ $em-base: 14;
 }
 
 // ---------------------------------
-// wrapper
+// icon and text positioning
 // ---------------------------------
 .t-icon-wrapper {
   display: flex;
   align-items: center;
+}
 
-  :host([icon-position="right"]) & {
-    flex-direction: row-reverse;
-  }
+:host([icon-position="right"]) {
+  .t-icon-content { order: -1; }
 }
 
 // ---------------------------------
