@@ -40,10 +40,38 @@
       </demo-snippet>
 
       <demo-snippet>
+        <h2>Don't transform on click</h2>
+        <template>
+          <button is="transburger-icon" no-transform></button>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
         <h2>Buttons with custom styles</h2>
         <template>
           <button is="transburger-icon" class="btn"></button>
           <button is="transburger-icon" class="btn btn--red" transform-to="back" active></button>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <h2>With custom sizes</h2>
+        <template>
+          <style is="custom-style">
+            .icon-size-42 { --transburger-icon-height: 42px; }
+            .icon-size-49 { --transburger-icon-height: 49px; }
+            .icon-size-56 { --transburger-icon-height: 56px; }
+          </style>
+
+          <button is="transburger-icon" class="btn icon-size-42"></button>
+          <button is="transburger-icon" class="btn icon-size-49"></button>
+          <button is="transburger-icon" class="btn icon-size-56"></button>
+
+          <hr>
+
+          <button is="transburger-icon" transform-to="back" class="btn btn--red icon-size-42"></button>
+          <button is="transburger-icon" transform-to="back" class="btn btn--red icon-size-49"></button>
+          <button is="transburger-icon" transform-to="back" class="btn btn--red icon-size-56"></button>
         </template>
       </demo-snippet>
     </div>
