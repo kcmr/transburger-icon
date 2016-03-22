@@ -12,16 +12,30 @@
   <body ontouchstart>
     <div class="wrapper">
       <demo-snippet>
-        <h2>Default: menu to close</h2>
+        <h2>Transform to close (default)</h2>
         <template>
           <button is="transburger-icon"></button>
         </template>
       </demo-snippet>
 
       <demo-snippet>
-        <h2>Menu to back</h2>
+        <h2>Transform to arrow left</h2>
         <template>
-          <button is="transburger-icon" transform-to="back"></button>
+          <button is="transburger-icon" transform-to="arrow-left"></button>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <h2>Transform to arrow right</h2>
+        <template>
+          <button is="transburger-icon" transform-to="arrow-right"></button>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <h2>Active</h2>
+        <template>
+          <button is="transburger-icon" transform-to="arrow-right" active></button>
         </template>
       </demo-snippet>
 
@@ -47,31 +61,23 @@
       </demo-snippet>
 
       <demo-snippet>
-        <h2>Buttons with custom styles</h2>
-        <template>
-          <button is="transburger-icon" class="btn"></button>
-          <button is="transburger-icon" class="btn btn--red" transform-to="back" active></button>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <h2>With custom sizes</h2>
+        <h2>With custom style and sizes</h2>
         <template>
           <style is="custom-style">
-            .icon-size-42 { --transburger-icon-height: 42px; }
-            .icon-size-49 { --transburger-icon-height: 49px; }
-            .icon-size-56 { --transburger-icon-height: 56px; }
+            .icon-size-21 { --transburger-icon-height: inherit; font-size: 21px; }
+            .icon-size-28 { --transburger-icon-height: 28px; font-size: 28px; }
+            .icon-size-35 { --transburger-icon-height: 35px; font-size: 35px; }
           </style>
 
-          <button is="transburger-icon" class="btn icon-size-42"></button>
-          <button is="transburger-icon" class="btn icon-size-49"></button>
-          <button is="transburger-icon" class="btn icon-size-56"></button>
+          <button is="transburger-icon" class="btn icon-size-21"></button>
+          <button is="transburger-icon" class="btn icon-size-28"></button>
+          <button is="transburger-icon" class="btn icon-size-35"></button>
 
           <hr>
 
-          <button is="transburger-icon" transform-to="back" class="btn btn--red icon-size-42"></button>
-          <button is="transburger-icon" transform-to="back" class="btn btn--red icon-size-49"></button>
-          <button is="transburger-icon" transform-to="back" class="btn btn--red icon-size-56"></button>
+          <button is="transburger-icon" transform-to="arrow-left" class="btn btn--red icon-size-21"></button>
+          <button is="transburger-icon" transform-to="arrow-left" class="btn btn--red icon-size-28"></button>
+          <button is="transburger-icon" transform-to="arrow-right" class="btn btn--red icon-size-35"></button>
         </template>
       </demo-snippet>
     </div>
