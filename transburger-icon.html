@@ -10,28 +10,34 @@ By default the hamburger icon is transformed into a close icon when the button i
 
 To prevent changing the icon when the button is clicked, add `no-transform` attribute.
 
-Example:
+__Example:__
 
 ```html
 <button is="transburger-icon" transform-to="arrow-left"></button>
 ```
 
-Example with text:
+__With text and icon to the right:__
 
 ```html
 <button is="transburger-icon" icon-position="right">Button text</button>
+```
+
+__Don't transform on click:__
+
+```html
+<button is="transburger-icon" no-transform></button>
 ```
 
 ## Styling
 
 The following custom properties and mixins are available for styling:
 
-| Custom property                | Description                     | Default        |
-|:-------------------------------|:--------------------------------| :--------------|
-| --transburger-icon-height      | Icon height in pixels           | 14px           |
-| --transburger-icon-width       | Icon width                      | 1.42857em      |
-| --transburger-icon-margin      | Vertical and horizontal margins | 0.85714em      |
-| --transburger-icon-line-radius | Hamburger icon lines radius     | 2px            |
+| Custom property                | Description                                                    | Default        |
+|:-------------------------------|:---------------------------------------------------------------| :--------------|
+| --transburger-icon-height      | Icon height in pixels. For better results, use multiples of 7  | 14px           |
+| --transburger-icon-width       | Icon width                                                     | 1.42857em      |
+| --transburger-icon-margin      | Vertical and horizontal margins                                | 0.85714em      |
+| --transburger-icon-line-radius | Hamburger icon lines radius                                    | 2px            |
 
 @demo demo/index.html
 -->
