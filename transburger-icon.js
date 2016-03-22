@@ -73,4 +73,9 @@ Polymer({
       this.listen(this, 'click', 'toggleIcon');
     }
   }
+
+  /**
+   * Fired when the icon is changed.
+   * @event transburger-icon-changed
+   */
 });
