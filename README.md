@@ -1,21 +1,25 @@
-# transburger-icon
+# Transburger Icon
 
-Your component description.
+Transburger Icon is a Custom Element that extends a native `<button>` tag to display a transformable hamburger menu icon. By default the menu icon is transformed into a close icon.
 
-Example:
+**Example with default values**
+
+The menu icon is transformed into a close icon and the icon is positioned to the left of the button text.
+
 ```html
-<transburger-icon></transburger-icon>
+<button is="transburger-icon">Button text</button>
 ```
 
-## Data model
-[comment]: <> (use either one of the data model docs examples)
+**Menu to back**
 
-Canonical DM: 'entityName', example available [List of entities]
+```html
+<button is="transburger-icon" transform-to="back"></button>
+```
 
-Component own DM example:
+**Icon positioned to the right**
 
-```json
-{}
+```html
+<button is="transburger-icon" icon-position="right">Button text</button>
 ```
 
 ## Styling
@@ -23,6 +27,6 @@ Component own DM example:
 The following custom properties and mixins are available for styling:
 
 | Custom property | Description     | Default        |
-|:---------------:|:---------------:| :-------------:|
+|:----------------|:----------------| :--------------|
 | --your-var      | var description | default value  |
 | --transburger-icon  | empty mixin     | {}             |
