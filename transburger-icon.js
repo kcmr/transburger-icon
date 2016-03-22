@@ -36,7 +36,7 @@ Polymer({
 
     /**
      * If true, the icon won't be changed after clicking the button.
-     * Use this attribute to change the icon programmatically.
+     * Use this attribute if you need to change the icon programmatically.
      */
     noTransform: {
       type: Boolean,
