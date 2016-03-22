@@ -43,9 +43,9 @@
 .t-icon {
   $block: &;
 
-  width: 20px;
-  height: 14px;
-  margin: 12px;
+  width: rem(20);
+  height: rem(14);
+  margin: rem(12);
   color: currentColor;
   position: relative;
 
