@@ -7,6 +7,12 @@
     "polymer",
     "button"
   ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.2.0"
   },
