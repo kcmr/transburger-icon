@@ -9,16 +9,17 @@
     border: 0; }
 
 .t-icon {
-  width: 1.25rem;
-  height: 0.875rem;
-  margin: 0.75rem;
+  font-size: var(--transburger-icon-height, 14px);
+  width: var(--transburger-icon-width, 1.42857em);
+  height: 1em;
+  margin: var(--transburger-icon-margin, 0.85714em);
   color: currentColor;
   position: relative; }
   .t-icon__middle, .t-icon::after, .t-icon::before {
     width: 100%;
-    height: 2px;
+    height: 0.14286em;
     background: currentColor;
-    border-radius: 4px;
+    border-radius: var(--transburger-icon-line-radius, 2px);
     position: absolute;
     margin: auto; }
   .t-icon::after, .t-icon::before {
@@ -36,21 +37,21 @@
     transition: transform 0.2s cubic-bezier(0.51, 0.2, 0.31, 0.85);
     transition: transform 0.2s cubic-bezier(0.51, 0.2, 0.31, 0.85), -webkit-transform 0.2s cubic-bezier(0.51, 0.2, 0.31, 0.85); }
   .t-icon--back.is-active::before {
-    -webkit-transform: translate3d(-5px, 2px, 0) rotate(-40deg) scaleX(0.7);
-            transform: translate3d(-5px, 2px, 0) rotate(-40deg) scaleX(0.7); }
+    -webkit-transform: translate3d(-0.35714em, calc(1em / 7), 0) rotate(-40deg) scaleX(0.7);
+            transform: translate3d(-0.35714em, calc(1em / 7), 0) rotate(-40deg) scaleX(0.7); }
   .t-icon--back.is-active::after {
-    -webkit-transform: translate3d(-5px, -2px, 0) rotate(40deg) scaleX(0.7);
-            transform: translate3d(-5px, -2px, 0) rotate(40deg) scaleX(0.7); }
+    -webkit-transform: translate3d(-0.35714em, calc(-1em / 7), 0) rotate(40deg) scaleX(0.7);
+            transform: translate3d(-0.35714em, calc(-1em / 7), 0) rotate(40deg) scaleX(0.7); }
   .t-icon--close::before, .t-icon--close::after {
     -webkit-transform: rotate(0);
             transform: rotate(0); }
   .t-icon--close::before {
-    bottom: calc(100% - 2px);
+    bottom: calc(100% - .14286em);
     transition: bottom .2s .24s ease, -webkit-transform .2s ease;
     transition: transform .2s ease, bottom .2s .24s ease;
     transition: transform .2s ease, bottom .2s .24s ease, -webkit-transform .2s ease; }
   .t-icon--close::after {
-    top: calc(100% - 2px);
+    top: calc(100% - .14286em);
     transition: top .2s .24s ease, -webkit-transform .2s ease;
     transition: transform .2s ease, top .2s .24s ease;
     transition: transform .2s ease, top .2s .24s ease, -webkit-transform .2s ease; }
