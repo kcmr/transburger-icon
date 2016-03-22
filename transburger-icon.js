@@ -23,18 +23,34 @@ Polymer({
       type: String,
       value: 'left',
       reflectToAttribute: true
+    },
+
+    /**
+     * If true, the second icon (close or back) will be shown initially.
+     */
+    active: {
+      type: Boolean,
+      value: false,
+      observer: '_activeObserver'
     }
   },
 
   listeners: {
-    'click': '_onClick'
+    'click': 'toggleIcon'
   },
 
-  _onClick: function() {
-    this.$.icon.classList.toggle('is-active');
+  toggleIcon: function() {
+    this.active = !this.active;
   },
 
   _transformToObserver: function() {
     this.$.icon.classList.add('t-icon--' + this.transformTo);
+  },
+
+  _activeObserver: function() {
+    this.$.icon.classList.toggle('is-active', this.active);
+    this.fire('transburger-icon-changed', {
+      icon: this.active ? this.transformTo : 'menu'
+    });
   }
 });
