@@ -5,11 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo transburger-icon</title>
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../../polymer/polymer.html">
     <link rel="import" href="../transburger-icon.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="stylesheet" href="css/demo.css">
   </head>
   <body ontouchstart>
-    <button is="transburger-icon"></button>
-    <button is="transburger-icon" transform-to="back"></button>
+    <div class="wrapper">
+      <demo-snippet>
+        <h2>Default: menu to close</h2>
+        <template>
+          <button is="transburger-icon"></button>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <h2>Menu to back</h2>
+        <template>
+          <button is="transburger-icon" transform-to="back"></button>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <h2>With text</h2>
+        <template>
+          <button is="transburger-icon">Button text</button>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <h2>With text and icon placed to the right</h2>
+        <template>
+          <button is="transburger-icon" icon-position="right">Button text</button>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <h2>Buttons with custom styles</h2>
+        <template>
+          <button is="transburger-icon" class="btn"></button>
+          <button is="transburger-icon" class="btn btn--red" transform-to="back" active></button>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <script>
+      document.addEventListener('transburger-icon-changed', function(e) {
+        console.log(e.detail.icon);
+      });
+    </script>
   </body>
 </html>
