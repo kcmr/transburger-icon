@@ -17,13 +17,14 @@ h2 {
 }
 
 .btn {
+  font: inherit;
   background: #006dbe;
-  padding: 0 0 2px;
+  padding: 0 0 0.13em;
   font: inherit;
   cursor: pointer;
   outline: none;
-  border-radius: 4px;
-  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.25em;
+  box-shadow: inset 0 -0.25em 0 rgba(0, 0, 0, 0.2);
   color: #fff; }
 .btn--red {
   background: #ed1e42; }
