@@ -40,6 +40,13 @@
       </template>
     </test-fixture>
 
+    <test-fixture id="a11y">
+      <template>
+        <button is="transburger-icon" aria-label="Button label" aria-controls="elementId"></button>
+        <div id="elementId"></div>
+      </template>
+    </test-fixture>
+
     <script>
     suite('<button is="transburger-icon"></button>', function() {
       var btnDefault;
@@ -88,16 +95,16 @@
         assert.equal(btnNoTransform.active, active);
       });
 
-      suite('events', function() {
-        test('transburger-icon-changed is fired when active property changes', function(done) {
-          btnDefault.addEventListener('transburger-icon-changed', function(e) {
-            assert.equal(e.detail.icon, 'close');
-            done();
-          });
-
-          btnDefault.active = !btnDefault.active;
+      test('transburger-icon-changed event is fired when active property changes', function(done) {
+        btnDefault.addEventListener('transburger-icon-changed', function(e) {
+          assert.equal(e.detail.icon, 'close');
+          done();
         });
+
+        btnDefault.active = !btnDefault.active;
       });
+
+      a11ySuite('a11y');
     });
     </script>
   </body>
