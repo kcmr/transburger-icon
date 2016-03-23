@@ -22,21 +22,15 @@
       </template>
     </test-fixture>
 
-    <test-fixture id="icon-arrow-left">
-      <template>
-        <button is="transburger-icon" transform-to="arrow-left"></button>
-      </template>
-    </test-fixture>
-
-    <test-fixture id="icon-arrow-right">
-      <template>
-        <button is="transburger-icon" transform-to="arrow-right"></button>
-      </template>
-    </test-fixture>
-
     <test-fixture id="no-transform">
       <template>
         <button is="transburger-icon" no-transform></button>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="active">
+      <template>
+        <button is="transburger-icon" active></button>
       </template>
     </test-fixture>
 
@@ -50,15 +44,13 @@
     <script>
     suite('<button is="transburger-icon"></button>', function() {
       var btnDefault;
-      var btnArrowLeft;
-      var btnArrowRight;
       var btnNoTransform;
+      var btnActive;
 
       setup(function() {
         btnDefault = fixture('default');
-        btnArrowLeft = fixture('icon-arrow-left');
-        btnArrowRight = fixture('icon-arrow-right');
         btnNoTransform = fixture('no-transform');
+        btnActive = fixture('active');
       });
 
       test('default properties', function() {
@@ -68,36 +60,34 @@
         assert.equal(btnDefault.noTransform, false);
       });
 
-      test('#icon classList contains "t-icon--close" by default', function() {
-        var icon = Polymer.dom(btnDefault.root).querySelector('#icon');
-        assert(icon.classList.contains('t-icon--close'));
-      });
-
-      test('setting transform-to="arrow-left" adds "t-icon--arrow-left" class to #icon', function() {
-        var icon = Polymer.dom(btnArrowLeft.root).querySelector('#icon');
-        assert(icon.classList.contains('t-icon--arrow-left'));
-      });
-
-      test('setting transform-to="arrow-right" adds "t-icon--arrow-right" class to #icon', function() {
-        var icon = Polymer.dom(btnArrowRight.root).querySelector('#icon');
-        assert(icon.classList.contains('t-icon--arrow-right'));
-      });
-
-      test('clicking button changes active property', function() {
+      test('clicking button changes its state', function() {
         var active = btnDefault.active;
         btnDefault.click();
         assert.equal(btnDefault.active, !active);
       });
 
-      test('clicking on [no-transform] does not change active property', function() {
+      test('clicking on [no-transform] button does not change its state', function() {
         var active = btnNoTransform.active;
         btnNoTransform.click();
         assert.equal(btnNoTransform.active, active);
       });
 
-      test('transburger-icon-changed event is fired when active property changes', function(done) {
+      test('setting active attribute changes default state', function() {
+        var defaultActiveProp = btnDefault.active;
+        assert.equal(btnActive.active, !defaultActiveProp);
+      });
+
+      test('changing button state fires an event: "transburger-icon-changed"', function(done) {
+        btnDefault.addEventListener('transburger-icon-changed', function() {
+          done();
+        });
+
+        btnDefault.active = !btnDefault.active;
+      });
+
+      test('"transburger-icon-changed" event detail contains icon property', function(done) {
         btnDefault.addEventListener('transburger-icon-changed', function(e) {
-          assert.equal(e.detail.icon, 'close');
+          assert(e.detail.icon);
           done();
         });
 
