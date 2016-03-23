@@ -77,5 +77,6 @@ Polymer({
   /**
    * Fired when the icon is changed.
    * @event transburger-icon-changed
+   * @param {{icon: String}} detail Icon displayed.
    */
 });
