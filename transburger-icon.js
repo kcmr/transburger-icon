@@ -51,6 +51,9 @@ Polymer({
     }
   },
 
+  /**
+   * Changes the icon.
+   */
   toggleIcon: function() {
     this.active = !this.active;
   },
