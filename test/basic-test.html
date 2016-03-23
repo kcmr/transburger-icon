@@ -62,17 +62,17 @@
       });
 
       test('#icon classList contains "t-icon--close" by default', function() {
-        var icon = btnDefault.querySelector('#icon');
+        var icon = Polymer.dom(btnDefault.root).querySelector('#icon');
         assert(icon.classList.contains('t-icon--close'));
       });
 
       test('setting transform-to="arrow-left" adds "t-icon--arrow-left" class to #icon', function() {
-        var icon = btnArrowLeft.querySelector('#icon');
+        var icon = Polymer.dom(btnArrowLeft.root).querySelector('#icon');
         assert(icon.classList.contains('t-icon--arrow-left'));
       });
 
       test('setting transform-to="arrow-right" adds "t-icon--arrow-right" class to #icon', function() {
-        var icon = btnArrowRight.querySelector('#icon');
+        var icon = Polymer.dom(btnArrowRight.root).querySelector('#icon');
         assert(icon.classList.contains('t-icon--arrow-right'));
       });
 
