@@ -10,7 +10,7 @@ Transburger Icon is a [Custom Element](http://webcomponents.org/articles/introdu
 
 ## Install
 
-Install the component using [Bower](http://bower.io/):
+Install the component using Bower:
 
 ```bash
 $ bower install kcmr/transburger-icon --save
