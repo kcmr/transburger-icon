@@ -59,7 +59,9 @@ Use it!:
 
 ## Styling
 
-The following custom properties and mixins are available for styling:
+The following custom properties are available for styling.
+
+If you want to scale the icon keeping the default proportions, you only need to set the icon height. You can use a value expressed in pixels or the keyword `inherit` to use the button font size. The icon color is the same as the button text color.
 
 | Custom property                | Description                                                    | Default        |
 |:-------------------------------|:---------------------------------------------------------------| :--------------|
