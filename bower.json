@@ -13,7 +13,10 @@
   "main": "transburger-icon.html",
   "homepage": "https://github.com/kcmr/transburger-icon/",
   "ignore": [
-    "*.gif"
+    "/.*",
+    "*.gif",
+    "*.scss",
+    "/test/"
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0"
