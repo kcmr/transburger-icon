@@ -1,17 +1,22 @@
 {
   "name": "transburger-icon",
   "version": "1.0.1",
+  "authors": [
+    "Kus Cámara"
+  ],
   "description": "A button with a transformable hamburger menu icon",
   "keywords": [
     "web-components",
     "polymer",
     "button"
   ],
+  "main": "transburger-icon.html",
+  "homepage": "https://github.com/kcmr/transburger-icon/",
   "ignore": [
-    "**/.*",
+    "/.*",
     "*.gif",
-    "node_modules",
-    "test"
+    "/bower_components",
+    "/test"
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0"
@@ -22,8 +27,5 @@
     "web-component-tester": "^4.2.2",
     "iron-component-page": "PolymerElements/iron-component-page#^1.1.5",
     "test-fixture": "Polymer/test-fixture#^0.2.0"
-  },
-  "main": [
-    "transburger-icon.html"
-  ]
+  }
 }
