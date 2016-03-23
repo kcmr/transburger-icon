@@ -53,13 +53,6 @@
         btnActive = fixture('active');
       });
 
-      test('default properties', function() {
-        assert.equal(btnDefault.transformTo, 'close');
-        assert.equal(btnDefault.iconPosition, 'left');
-        assert.equal(btnDefault.active, false);
-        assert.equal(btnDefault.noTransform, false);
-      });
-
       test('clicking button changes its state', function() {
         var active = btnDefault.active;
         btnDefault.click();
