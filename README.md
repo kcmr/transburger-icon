@@ -1,4 +1,4 @@
-# Transburger Icon
+# Transburger Icon [![Build Status](https://travis-ci.org/kcmr/transburger-icon.svg?branch=master)](https://travis-ci.org/kcmr/transburger-icon)
 
 Transburger Icon is a [Custom Element](http://webcomponents.org/articles/introduction-to-custom-elements/) that extends a standard `<button>` tag to display a **hamburger icon that is transformed into a back or close icon** after clicking the button or programmatically using its `toggleIcon()` method.
 
