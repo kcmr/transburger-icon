@@ -6,7 +6,7 @@ Transburger Icon is a [Custom Element](http://webcomponents.org/articles/introdu
 
 ## Demo
 
-[Demo and API docs](http://)
+[Demo and API docs](http://kcmr.github.io/transburger-icon/)
 
 ## Install
 
