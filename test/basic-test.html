@@ -8,33 +8,95 @@
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
+    <link rel="import" href="../../test-fixture/test-fixture.html">
+
     <!-- Step 1: import the element to test -->
     <link rel="import" href="../transburger-icon.html">
   </head>
   <body>
 
     <!-- You can use the document as a place to set up your fixtures. -->
-    <transburger-icon id="myEl"></transburger-icon>
+    <test-fixture id="default">
+      <template>
+        <button is="transburger-icon"></button>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="icon-arrow-left">
+      <template>
+        <button is="transburger-icon" transform-to="arrow-left"></button>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="icon-arrow-right">
+      <template>
+        <button is="transburger-icon" transform-to="arrow-right"></button>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="no-transform">
+      <template>
+        <button is="transburger-icon" no-transform></button>
+      </template>
+    </test-fixture>
 
     <script>
-    suite('<transburger-icon> tag', function() {
-      var myEl;
+    suite('<button is="transburger-icon"></button>', function() {
+      var btnDefault;
+      var btnArrowLeft;
+      var btnArrowRight;
+      var btnNoTransform;
 
-      suiteSetup(function() {
-          myEl = document.querySelector('#myEl');
+      setup(function() {
+        btnDefault = fixture('default');
+        btnArrowLeft = fixture('icon-arrow-left');
+        btnArrowRight = fixture('icon-arrow-right');
+        btnNoTransform = fixture('no-transform');
       });
 
-      suiteTeardown(function() {
-          myEl.remove();
+      test('default properties', function() {
+        assert.equal(btnDefault.transformTo, 'close');
+        assert.equal(btnDefault.iconPosition, 'left');
+        assert.equal(btnDefault.active, false);
+        assert.equal(btnDefault.noTransform, false);
       });
 
-      suite('in general', function() {
-        test('should be in document', function() {
-          expect(myEl).not.to.be.undefined;
-        });
+      test('#icon classList contains "t-icon--close" by default', function() {
+        var icon = btnDefault.querySelector('#icon');
+        assert(icon.classList.contains('t-icon--close'));
+      });
 
-        test('should have welcome property', function() {
-          expect(myEl.properties).to.have.property('welcome').that.is.an('Object');
+      test('setting transform-to="arrow-left" adds "t-icon--arrow-left" class to #icon', function() {
+        var icon = btnArrowLeft.querySelector('#icon');
+        assert(icon.classList.contains('t-icon--arrow-left'));
+      });
+
+      test('setting transform-to="arrow-right" adds "t-icon--arrow-right" class to #icon', function() {
+        var icon = btnArrowRight.querySelector('#icon');
+        assert(icon.classList.contains('t-icon--arrow-right'));
+      });
+
+      test('clicking button changes active property', function() {
+        var active = btnDefault.active;
+        btnDefault.click();
+        assert.equal(btnDefault.active, !active);
+      });
+
+      test('clicking on [no-transform] does not change active property', function() {
+        var active = btnNoTransform.active;
+        btnNoTransform.click();
+        assert.equal(btnNoTransform.active, active);
+      });
+
+      suite('events', function() {
+        test('transburger-icon-changed is fired when active property changes', function() {
+          var timesFired = 0;
+          btnDefault.addEventListener('transburger-icon-changed', function(e) {
+            timesFired += 1;
+          });
+
+          btnDefault.active = !btnDefault.active;
+          assert(timesFired === 1, 'transburger-icon-changed fired once');
         });
       });
     });
