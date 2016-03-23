@@ -89,14 +89,13 @@
       });
 
       suite('events', function() {
-        test('transburger-icon-changed is fired when active property changes', function() {
-          var timesFired = 0;
+        test('transburger-icon-changed is fired when active property changes', function(done) {
           btnDefault.addEventListener('transburger-icon-changed', function(e) {
-            timesFired += 1;
+            assert.equal(e.detail.icon, 'close');
+            done();
           });
 
           btnDefault.active = !btnDefault.active;
-          assert(timesFired === 1, 'transburger-icon-changed fired once');
         });
       });
     });
