@@ -28,12 +28,6 @@
       </template>
     </test-fixture>
 
-    <test-fixture id="active">
-      <template>
-        <button is="transburger-icon" active></button>
-      </template>
-    </test-fixture>
-
     <test-fixture id="a11y">
       <template>
         <button is="transburger-icon" aria-label="Button label" aria-controls="elementId"></button>
@@ -44,33 +38,41 @@
     <script>
     suite('<button is="transburger-icon"></button>', function() {
       var btnDefault;
+      var btnDefaultIcon;
       var btnNoTransform;
-      var btnActive;
 
       setup(function() {
         btnDefault = fixture('default');
+        btnDefaultIcon = Polymer.dom(btnDefault.root).querySelector('#icon');
         btnNoTransform = fixture('no-transform');
-        btnActive = fixture('active');
       });
 
-      test('clicking button changes its state', function() {
-        var active = btnDefault.active;
+      test('Clicking button should change icon', function() {
+        var initialIconClass = btnDefaultIcon.className;
         btnDefault.click();
-        assert.equal(btnDefault.active, !active);
+        assert.notEqual(initialIconClass, btnDefaultIcon.className);
       });
 
-      test('clicking on [no-transform] button does not change its state', function() {
-        var active = btnNoTransform.active;
+      test('Clicking on button[no-transform] should not change icon', function() {
+        var icon = Polymer.dom(btnNoTransform.root).querySelector('#icon');
+        var initialIconClass = icon.className;
         btnNoTransform.click();
-        assert.equal(btnNoTransform.active, active);
+        assert.equal(initialIconClass, icon.className);
       });
 
-      test('setting active attribute changes default state', function() {
-        var defaultActiveProp = btnDefault.active;
-        assert.equal(btnActive.active, !defaultActiveProp);
+      test('toggleIcon() method should change icon', function() {
+        var initialIconClass = btnDefaultIcon.className;
+        btnDefault.toggleIcon();
+        assert.notEqual(initialIconClass, btnDefaultIcon.className);
       });
 
-      test('changing button state fires an event: "transburger-icon-changed"', function(done) {
+      test('Adding active boolean attribute should change icon', function() {
+        var initialIconClass = btnDefaultIcon.className;
+        btnDefault.setAttribute('active', true);
+        assert.notEqual(initialIconClass, btnDefaultIcon.className);
+      });
+
+      test('Changing active property fires an event: "transburger-icon-changed"', function(done) {
         btnDefault.addEventListener('transburger-icon-changed', function() {
           done();
         });
@@ -78,9 +80,9 @@
         btnDefault.active = !btnDefault.active;
       });
 
-      test('"transburger-icon-changed" event detail contains icon property', function(done) {
+      test('"transburger-icon-changed" Event detail contains "icon" property', function(done) {
         btnDefault.addEventListener('transburger-icon-changed', function(e) {
-          assert(e.detail.icon);
+          assert.deepProperty(e, "detail.icon");
           done();
         });
 
