@@ -69,3 +69,18 @@ If you want to scale the icon keeping the default proportions, you only need to 
 | --transburger-icon-width       | Icon width                                                     | 1.42857em      |
 | --transburger-icon-margin      | Vertical and horizontal margins                                | 0.85714em      |
 | --transburger-icon-line-radius | Hamburger icon lines radius                                    | 2px            |
+
+## Accessibility
+
+If you are going to use the **button without a text**, it's highly recommended that you use the [`aria-label` attribute](http://rawgit.com/w3c/aria/master/aria/aria.html#aria-label) to provide a descriptive text for the button such as “Menu”, “Toggle menu” or similar that could to be used by Assistive Technologies like screen readers.
+
+```html
+<button is="transburger-icon" aria-label="Menu"></button>
+```
+
+You can also provide the [`aria-controls` attribute](http://rawgit.com/w3c/aria/master/aria/aria.html#aria-controls) to specify the element ID that is controlled by the button.
+
+```html
+<button is="transburger-icon" aria-label="Menu" aria-controls="menu"></button>
+<div id="menu" role="navigation">…</div>
+```
