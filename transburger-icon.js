@@ -10,8 +10,7 @@ Polymer({
      */
     transformTo: {
       type: String,
-      value: 'close',
-      observer: '_transformToObserver'
+      value: 'close'
     },
 
     /**
@@ -56,10 +55,6 @@ Polymer({
    */
   toggleIcon: function() {
     this.active = !this.active;
-  },
-
-  _transformToObserver: function() {
-    this.$.icon.classList.add('t-icon--' + this.transformTo);
   },
 
   _activeObserver: function() {
