@@ -32,6 +32,7 @@
     "test-fixture": "Polymer/test-fixture#^0.2.0"
   },
   "resolutions": {
-    "test-fixture": "^1.0.0"
+    "test-fixture": "^1.0.0",
+    "webcomponentsjs": "^0.7.20"
   }
 }
