@@ -58,7 +58,7 @@ Polymer({
   },
 
   _activeObserver: function() {
-    this.$.icon.classList.toggle('is-active', this.active);
+    this.toggleClass('is-active', this.active, this.$.icon);
     this.fire('transburger-icon-changed', {
       icon: this.active ? this.transformTo : 'menu'
     });
