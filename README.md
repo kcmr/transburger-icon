@@ -55,7 +55,7 @@ Use it!:
 
 | Event name | Description |
 |:-----------|:------------|
-| transburger-icon-changed | Fired when the icon is changed |
+| icon-changed | Fired when the icon is changed |
 
 ## Styling
 
