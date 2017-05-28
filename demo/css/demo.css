@@ -12,6 +12,10 @@ h2 {
 
 p { font-weight: 300; }
 
+code-sample {
+  --code-sample-font-family: Roboto Mono, monospace;
+}
+
 resizable-panels code-sample { 
   background: #282c34; 
   width: 50%;
@@ -37,4 +41,7 @@ resizable-panels code-sample {
 .demo-sample { margin-bottom: 20px; }
 
 .center { text-align: center; }
+
+.toast-text { line-height: 1.5; font-family: Roboto Mono, monaco, monospace; font-size: 13px; }
+.toast-text > span { color: #E9D80E; }
 

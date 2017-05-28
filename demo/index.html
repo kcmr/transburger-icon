@@ -10,6 +10,7 @@
     <link rel="import" href="../../code-sample/code-sample.html">
     <link rel="import" href="../../resizable-panels/resizable-panels.html">
     <link rel="import" href="../../paper-toast/paper-toast.html">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400">
     <link rel="stylesheet" href="css/demo.css">
     <style>
       .padding-right { --transburger-icon-button-padding: 0 12px 0 0; }
@@ -185,12 +186,17 @@
     <paper-toast id="toast"></paper-toast>
 
     <script>
-      const toast = document.querySelector('#toast');
-      document.addEventListener('transburger-icon-changed', e => {
-        toast.text = `event: 'transburger-icon-changed', detail: {icon: ${e.detail.icon}}`;
-        if (toast.opened) { toast.cancel(); }
-        toast.opened = true;
-      });
+      (function() {
+        const toast = document.querySelector('#toast');
+        document.addEventListener('transburger-icon-changed', e => {
+          let html = `
+            <div class="toast-text"><span>Event:</span> transburger-icon-changed</div>
+            <div class="toast-text"><span>Detail:</span> { icon: ${e.detail.icon} }`;
+          toast.innerHTML = html;
+          if (toast.opened) { toast.opened = false; }
+          toast.opened = true;
+        });
+      }());
     </script>
   </body>
 </html>
