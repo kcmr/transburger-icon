@@ -1,6 +1,6 @@
 body {
   font-family: Roboto, sans-serif;
-  background: #fafafa;
+  background: #E6E8E8;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -12,15 +12,29 @@ h2 {
 
 p { font-weight: 300; }
 
+resizable-panels code-sample { 
+  background: #282c34; 
+  width: 50%;
+}
+
 .wrapper {
   max-width: 800px;
   margin: 40px auto 0;
 }
 
-.demo { margin-bottom: 40px; }
+.demo { 
+  margin-bottom: 40px; 
+  padding: 40px;
+  background-color: #fff;
+}
 .demo-text {
   text-align: left;
-  margin: 0 -20px 20px;
-  padding: 0 20px;
+  margin: 0 0 20px;
+  padding: 0;
   border-bottom: 1px solid #e0e0e0;
 }
+
+.demo-sample { margin-bottom: 20px; }
+
+.center { text-align: center; }
+
