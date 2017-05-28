@@ -1,7 +1,6 @@
 # Transburger Icon 
 
 [![Build Status](https://img.shields.io/travis/kcmr/transburger-icon/master.svg?style=flat-square)](https://travis-ci.org/kcmr/transburger-icon) 
-![Bower Version](https://img.shields.io/bower/v/transburger-icon.svg?style=flat-square)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://www.webcomponents.org/element/kcmr/transburger-icon)
 
 `<transburger-icon>` is a custom element to display a hamburger icon that is transformed into a back or close icon after clicking on it or programmatically using its `toggleIcon()` method.
