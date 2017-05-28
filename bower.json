@@ -8,7 +8,9 @@
   "keywords": [
     "web-components",
     "polymer",
-    "button"
+    "button",
+    "icon",
+    "menu"
   ],
   "main": "transburger-icon.html",
   "license": "MIT",
@@ -23,12 +25,13 @@
     "*.scss"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^2.0.0"
   },
   "devDependencies": {
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.1.1",
-    "web-component-tester": "^4.2.2",
-    "iron-component-page": "PolymerElements/iron-component-page#^1.1.5"
+    "web-component-tester": "^6.0.0",
+    "code-sample": "^0.1.2",
+    "resizable-panels": "^2.0.4",
+    "paper-toast": "PolymerElements/paper-toast#^2.0.0"
   },
   "resolutions": {
     "webcomponentsjs": "^0.7.20"
