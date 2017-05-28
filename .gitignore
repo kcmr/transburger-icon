@@ -1,9 +1,4 @@
 bower_components
-components
-node_modules
+coverage-reports
 .DS_Store
 
-# cellsjs validator
-
-cells.log
-coverage
