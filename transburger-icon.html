@@ -5,7 +5,7 @@
   <template>
     <style include="transburger-icon-styles"></style>
     
-    <button type="[[type]]" disabled="[[disabled]]" on-click="toggleIcon">
+    <button type$="[[type]]" disabled$="[[disabled]]" on-click="toggleIcon">
       <div class="t-icon-wrapper">
         <div class$="t-icon t-icon--{{transformTo}}" id="icon">
           <div class="t-icon__middle"></div>
