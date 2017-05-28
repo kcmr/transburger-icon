@@ -9,6 +9,7 @@
     <link rel="import" href="../../code-sample/themes/one-dark.html">
     <link rel="import" href="../../code-sample/code-sample.html">
     <link rel="import" href="../../resizable-panels/resizable-panels.html">
+    <link rel="import" href="../../paper-toast/paper-toast.html">
     <link rel="stylesheet" href="css/demo.css">
     <style>
       .padding-right { --transburger-icon-button-padding: 0 12px 0 0; }
@@ -181,9 +182,14 @@
       </div>
     </div>
 
+    <paper-toast id="toast"></paper-toast>
+
     <script>
-      document.addEventListener('transburger-icon-changed', function(e) {
-        console.log(e.detail.icon);
+      const toast = document.querySelector('#toast');
+      document.addEventListener('transburger-icon-changed', e => {
+        toast.text = `event: 'transburger-icon-changed', detail: {icon: ${e.detail.icon}}`;
+        if (toast.opened) { toast.cancel(); }
+        toast.opened = true;
       });
     </script>
   </body>

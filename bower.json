@@ -28,7 +28,8 @@
   "devDependencies": {
     "web-component-tester": "^6.0.0",
     "code-sample": "^0.1.2",
-    "resizable-panels": "^2.0.4"
+    "resizable-panels": "^2.0.4",
+    "paper-toast": "PolymerElements/paper-toast#^2.0.0"
   },
   "resolutions": {
     "webcomponentsjs": "^0.7.20"
