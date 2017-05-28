@@ -8,10 +8,6 @@
 
 [![Transburger Icon Demos](https://raw.githubusercontent.com/kcmr/transburger-icon/master/transburger-icon-demos.gif)](http://kcmr.github.io/transburger-icon/)
 
-## Demo
-
-[Demo](http://kcmr.github.io/transburger-icon/)
-
 ## Install
 
 Install the component using [Bower](http://bower.io/):
