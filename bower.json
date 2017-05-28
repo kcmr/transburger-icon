@@ -8,7 +8,9 @@
   "keywords": [
     "web-components",
     "polymer",
-    "button"
+    "button",
+    "icon",
+    "menu"
   ],
   "main": "transburger-icon.html",
   "license": "MIT",
