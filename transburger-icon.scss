@@ -28,15 +28,36 @@ $em-base: 14;
   @return ($pxval / $base) * 1em;
 }
 
+@mixin makeCSSVars($map, $cssVarName) {
+  @each $prop, $value in $map {
+    #{$prop}: var(#{$cssVarName}-#{$prop}, #{$value});
+  }
+}
+
+:host { display: inline-block; }
+:host([hidden]) { display: none; }
+
 // ---------------------------------
 // <button> tag style normalization
 // ---------------------------------
-:host {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  overflow: visible;
-  vertical-align: middle;
+$buttonProperties: (
+  border: 0,
+  margin: 0,
+  padding: 0,
+  overflow: visible,
+  vertical-align: middle,
+  font-family: inherit,
+  font-size: var(--transburger-icon-height, 14px),
+  color: inherit,
+  cursor: initial,
+  outline: initial,
+  border-radius: initial,
+  box-shadow: none,
+  background: #ccc
+);
+
+button {
+  @include makeCSSVars($buttonProperties, '--transburger-icon-button');
 
   &::-moz-focus-inner {
     padding: 0;
@@ -52,7 +73,7 @@ $em-base: 14;
   align-items: center;
 }
 
-:host([icon-position="right"]) {
+:host([icon-position="right"]) button {
   .t-icon-content { order: -1; }
 }
 
@@ -61,8 +82,7 @@ $em-base: 14;
 // ---------------------------------
 .t-icon {
   $block: &;
-
-  font-size: var(--transburger-icon-height, 14px);
+  font-size: var(--transburger-icon-height, inherit);
   width:  var(--transburger-icon-width, em(20));
   height: 1em;
   margin: var(--transburger-icon-margin, em(12));
