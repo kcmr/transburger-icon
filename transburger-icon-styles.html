@@ -76,36 +76,26 @@ button {
   .t-icon--arrow-right.is-active::after {
     -webkit-transform: translate3d(0.35714em, calc(-1em / 7), 0) rotate(-40deg) scaleX(0.7);
             transform: translate3d(0.35714em, calc(-1em / 7), 0) rotate(-40deg) scaleX(0.7); }
+
   .t-icon--close::before, .t-icon--close::after {
-    -webkit-transform: rotate(0);
-            transform: rotate(0); }
+    transform-origin: center;
+    transition: all 300ms; }
   .t-icon--close::before {
-    bottom: calc(100% - .14286em);
-    transition: bottom .2s .24s ease, -webkit-transform .2s ease;
-    transition: transform .2s ease, bottom .2s .24s ease;
-    transition: transform .2s ease, bottom .2s .24s ease, -webkit-transform .2s ease; }
+    bottom: calc(100% - .14286em); }
   .t-icon--close::after {
-    top: calc(100% - .14286em);
-    transition: top .2s .24s ease, -webkit-transform .2s ease;
-    transition: transform .2s ease, top .2s .24s ease;
-    transition: transform .2s ease, top .2s .24s ease, -webkit-transform .2s ease; }
+    top: calc(100% - .14286em); }
   .t-icon--close .t-icon__middle {
-    transition: opacity .2s; }
+    transform-origin: center;
+    transition: all 300ms; }
   .t-icon--close.is-active .t-icon__middle {
     opacity: 0; }
   .t-icon--close.is-active::before {
     bottom: 0;
     -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-    transition: bottom .2s ease, -webkit-transform .2s .24s ease;
-    transition: bottom .2s ease, transform .2s .24s ease;
-    transition: bottom .2s ease, transform .2s .24s ease, -webkit-transform .2s .24s ease; }
+            transform: rotate(45deg); }
   .t-icon--close.is-active::after {
     top: 0;
     -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-    transition: top .2s ease, -webkit-transform .2s .24s ease;
-    transition: top .2s ease, transform .2s .24s ease;
-    transition: top .2s ease, transform .2s .24s ease, -webkit-transform .2s .24s ease; }
+            transform: rotate(-45deg); }
 
 </style></template></dom-module>
