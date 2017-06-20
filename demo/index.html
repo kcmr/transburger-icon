@@ -177,9 +177,9 @@
                 --transburger-icon-button-background: #ed1e42;
               }
             </template>
-          </code-sample>  
+          </code-sample>
         </resizable-panels>
-        
+
       </div>
     </div>
 
@@ -193,7 +193,10 @@
             <div class="toast-text"><span>Event:</span> transburger-icon-changed</div>
             <div class="toast-text"><span>Detail:</span> { icon: ${e.detail.icon} }`;
           toast.innerHTML = html;
-          if (toast.opened) { toast.opened = false; }
+          if (toast.opened) {
+            toast.opened = false;
+          }
+
           toast.opened = true;
         });
       }());

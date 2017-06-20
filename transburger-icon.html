@@ -14,9 +14,9 @@
         <div class="t-icon-content">
           <slot></slot>
         </div>
-      </div>  
+      </div>
     </button>
-    
+
   </template>
   <script>
     (function() {
@@ -29,13 +29,16 @@
        * To prevent changing the icon when the button is clicked, add `no-transform` attribute.
        *
        * Check out component's README.md for information about available custom CSS properties.
-       * 
+       *
        * @customElement
        * @polymer
        * @demo demo/index.html
        */
       class TransburgerIcon extends Polymer.Element {
-        static get is() { return 'transburger-icon' }
+        static get is() {
+          return 'transburger-icon';
+        }
+
         static get properties() {
           return {
             /**
@@ -88,7 +91,7 @@
               type: Boolean,
               value: false
             }
-          }
+          };
         }
 
         constructor() {
@@ -116,7 +119,10 @@
         }
 
         _onClick() {
-          if (this.noTransform) return;
+          if (this.noTransform) {
+            return;
+          }
+
           this.toggleIcon();
         }
       }
