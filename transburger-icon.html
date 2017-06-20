@@ -4,8 +4,8 @@
 <dom-module id="transburger-icon">
   <template>
     <style include="transburger-icon-styles"></style>
-    
-    <button type$="[[type]]" disabled$="[[disabled]]" on-click="toggleIcon">
+
+    <button type$="[[type]]" disabled$="[[disabled]]" on-click="_onClick">
       <div class="t-icon-wrapper">
         <div class$="t-icon t-icon--{{transformTo}}" id="icon">
           <div class="t-icon__middle"></div>
@@ -99,7 +99,6 @@
          * Changes the icon.
          */
         toggleIcon() {
-          if (this.noTransform) return;
           this.active = !this.active;
         }
 
@@ -114,6 +113,11 @@
             detail: { icon: active ? this.transformTo : 'menu' },
             bubbles: true, composed: true
           }));
+        }
+
+        _onClick() {
+          if (this.noTransform) return;
+          this.toggleIcon();
         }
       }
 
