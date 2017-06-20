@@ -1,0 +1,47 @@
+body {
+  font-family: Roboto, sans-serif;
+  background: #E6E8E8;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 1em;
+}
+
+p { font-weight: 300; }
+
+code-sample {
+  --code-sample-font-family: Roboto Mono, monospace;
+}
+
+resizable-panels code-sample { 
+  background: #282c34; 
+  width: 50%;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+
+.demo { 
+  margin-bottom: 40px; 
+  padding: 40px;
+  background-color: #fff;
+}
+.demo-text {
+  text-align: left;
+  margin: 0 0 20px;
+  padding: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.demo-sample { margin-bottom: 20px; }
+
+.center { text-align: center; }
+
+.toast-text { line-height: 1.5; font-family: Roboto Mono, monaco, monospace; font-size: 13px; }
+.toast-text > span { color: #E9D80E; }
+

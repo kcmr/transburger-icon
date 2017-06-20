@@ -1,0 +1,101 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <link rel="import" href="../transburger-icon.html">
+  </head>
+  <body>
+
+    <test-fixture id="default">
+      <template>
+        <transburger-icon></transburger-icon>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="no-transform">
+      <template>
+        <transburger-icon no-transform></transburger-icon>
+      </template>
+    </test-fixture>
+
+    <script>
+    suite('<transburger-icon> tag', function() {
+      var btnDefault;
+      var btnDefaultIcon;
+      var btnNoTransform;
+
+      setup(function() {
+        btnDefault = fixture('default');
+        btnDefaultIcon = btnDefault.shadowRoot.querySelector('#icon');
+        btnNoTransform = fixture('no-transform');
+      });
+
+      test('Clicking on transburger-icon[no-transform] should not change icon', function() {
+        var icon = btnNoTransform.shadowRoot.querySelector('#icon');
+        var initialIconClass = icon.className;
+        var button = btnNoTransform.shadowRoot.querySelector('button');
+        button.click();
+        assert.equal(initialIconClass, icon.className);
+      });
+
+      test('toggleIcon() method should change icon', function() {
+        var initialIconClass = btnDefaultIcon.className;
+        btnDefault.toggleIcon();
+        assert.notEqual(initialIconClass, btnDefaultIcon.className);
+      });
+
+      test('toggleIcon() method should change icon when noTransform is set to true', function() {
+        var icon = btnNoTransform.shadowRoot.querySelector('#icon');
+        var initialIconClass = icon.className;
+        btnNoTransform.toggleIcon();
+        assert.notEqual(initialIconClass, icon.className);
+      });
+
+      test('Clicking on transburger-icon should call toggleIcon() when noTransform is false', function() {
+        var spy = sinon.spy(btnDefault, 'toggleIcon');
+        var button = btnDefault.shadowRoot.querySelector('button');
+        button.click();
+        assert.isTrue(spy.calledOnce);
+      });
+
+      test('Adding active boolean attribute should change icon', function() {
+        var initialIconClass = btnDefaultIcon.className;
+        btnDefault.setAttribute('active', true);
+        assert.notEqual(initialIconClass, btnDefaultIcon.className);
+      });
+
+      test('Changing active property fires an event: "transburger-icon-changed"', function(done) {
+        btnDefault.addEventListener('transburger-icon-changed', function(e) {
+          assert.deepProperty(e, 'detail.icon', 'Event detail contains icon property');
+          done();
+        });
+
+        btnDefault.active = !btnDefault.active;
+      });
+
+      suite('Properties are properly binded to <button> element', function() {
+        let button;
+
+        setup(function() {
+          button = btnDefault.shadowRoot.querySelector('button');
+          btnDefault.type = 'button';
+          btnDefault.disabled = true;
+        });
+
+        test('<button> type attribute is the same as type property', function() {
+          assert.equal(button.type, btnDefault.type);
+        });
+
+        test('<button> disabled attribute is the same as disabled property', function() {
+          assert.equal(button.disabled, btnDefault.disabled);
+        });
+      });
+    });
+    </script>
+  </body>
+</html>

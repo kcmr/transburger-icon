@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo transburger-icon</title>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../transburger-icon.html">
+    <link rel="import" href="../../code-sample/themes/one-dark.html">
+    <link rel="import" href="../../code-sample/code-sample.html">
+    <link rel="import" href="../../resizable-panels/resizable-panels.html">
+    <link rel="import" href="../../paper-toast/paper-toast.html">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400">
+    <link rel="stylesheet" href="css/demo.css">
+    <style>
+      .padding-right { --transburger-icon-button-padding: 0 12px 0 0; }
+      .padding-left { --transburger-icon-button-padding: 0 0 0 12px; }
+
+      .icon-size-21 { --transburger-icon-height: 21px; }
+      .icon-size-28 { --transburger-icon-height: 28px; }
+      .icon-size-35 { --transburger-icon-height: 35px; }
+      .btn {
+        --transburger-icon-button-font-size: inherit;
+        --transburger-icon-button-padding: 0 0 0.13em;
+        --transburger-icon-button-cursor: pointer;
+        --transburger-icon-button-outline: none;
+        --transburger-icon-button-border-radius: 0.25em;
+        --transburger-icon-button-box-shadow: inset 0 -0.25em 0 rgba(0, 0, 0, 0.2);
+        --transburger-icon-button-color: #fff;
+        --transburger-icon-button-background: #006dbe;
+      }
+      .btn--red {
+        --transburger-icon-button-background: #ed1e42;
+      }
+    </style>
+  </head>
+  <body ontouchstart>
+    <div class="wrapper">
+      <div class="demo">
+        <div class="demo-text">
+          <h2>Transform to close (default)</h2>
+        </div>
+
+        <div class="demo-sample">
+          <transburger-icon></transburger-icon>
+        </div>
+
+        <code-sample>
+          <template>
+            <transburger-icon></transburger-icon>
+          </template>
+        </code-sample>
+      </div>
+
+      <div class="demo">
+        <div class="demo-text">
+          <h2>Transform to arrow</h2>
+        </div>
+
+        <div class="demo-sample">
+          <transburger-icon transform-to="arrow-left"></transburger-icon>
+          <transburger-icon transform-to="arrow-right"></transburger-icon>
+        </div>
+
+        <code-sample>
+          <template>
+            <transburger-icon transform-to="arrow-left"></transburger-icon>
+            <transburger-icon transform-to="arrow-right"></transburger-icon>
+          </template>
+        </code-sample>
+      </div>
+
+      <div class="demo">
+        <div class="demo-text">
+          <h2>Active</h2>
+        </div>
+
+        <div class="demo-sample">
+          <transburger-icon transform-to="arrow-right" active></transburger-icon>
+        </div>
+
+        <code-sample>
+          <template>
+            <transburger-icon transform-to="arrow-right" active></transburger-icon>
+          </template>
+        </code-sample>
+      </div>
+
+      <div class="demo">
+        <div class="demo-text">
+          <h2>With text</h2>
+          <p>You need to set padding left or right.</p>
+        </div>
+
+        <div class="demo-sample">
+          <transburger-icon class="padding-right">Button text</transburger-icon>
+          <transburger-icon icon-position="right" class="padding-left">Button text</transburger-icon>
+        </div>
+
+        <resizable-panels>
+          <code-sample>
+            <template>
+              <transburger-icon class="padding-right">Button text</transburger-icon>
+              <transburger-icon icon-position="right" class="padding-left">Button text</transburger-icon>
+            </template>
+          </code-sample>
+
+          <code-sample>
+            <template>
+              .padding-right { --transburger-icon-button-padding: 0 12px 0 0; }
+              .padding-left { --transburger-icon-button-padding: 0 0 0 12px; }
+            </template>
+          </code-sample>
+        </resizable-panels>
+      </div>
+
+      <div class="demo">
+        <div class="demo-text">
+          <h2>Don't transform on click</h2>
+        </div>
+
+        <div class="demo-sample">
+          <transburger-icon no-transform></transburger-icon>
+        </div>
+
+        <code-sample>
+          <template>
+            <transburger-icon no-transform></transburger-icon>
+          </template>
+        </code-sample>
+      </div>
+
+      <div class="demo">
+        <div class="demo-text">
+          <h2>With custom style and sizes</h2>
+          <p>The icon is sized using ems, so all the icon elements are scaled proportionally when you set the icon height. You can use a size in pixels or the <code>inherit</code> keyword to use the button font size.</p>
+          <p>The icon color is the same as the button text color.</p>
+        </div>
+
+        <div class="demo-sample center">
+          <transburger-icon class="btn icon-size-21"></transburger-icon>
+          <transburger-icon class="btn icon-size-28"></transburger-icon>
+          <transburger-icon class="btn icon-size-35"></transburger-icon>
+          <transburger-icon transform-to="arrow-right" class="btn btn--red icon-size-35"></transburger-icon>
+          <transburger-icon transform-to="arrow-left" class="btn btn--red icon-size-28"></transburger-icon>
+          <transburger-icon transform-to="arrow-left" class="btn btn--red icon-size-21"></transburger-icon>
+        </div>
+
+        <resizable-panels>
+          <code-sample>
+            <template>
+              <transburger-icon class="btn icon-size-21"></transburger-icon>
+              <transburger-icon class="btn icon-size-28"></transburger-icon>
+              <transburger-icon class="btn icon-size-35"></transburger-icon>
+              <transburger-icon transform-to="arrow-right" class="btn btn--red icon-size-35"></transburger-icon>
+              <transburger-icon transform-to="arrow-left" class="btn btn--red icon-size-28"></transburger-icon>
+              <transburger-icon transform-to="arrow-left" class="btn btn--red icon-size-21"></transburger-icon>
+            </template>
+          </code-sample>
+
+          <code-sample>
+            <template>
+              .icon-size-21 { --transburger-icon-height: 21px; }
+              .icon-size-28 { --transburger-icon-height: 28px; }
+              .icon-size-35 { --transburger-icon-height: 35px; }
+              .btn {
+                --transburger-icon-button-font-size: inherit;
+                --transburger-icon-button-padding: 0 0 0.13em;
+                --transburger-icon-button-cursor: pointer;
+                --transburger-icon-button-outline: none;
+                --transburger-icon-button-border-radius: 0.25em;
+                --transburger-icon-button-box-shadow: inset 0 -0.25em 0 rgba(0, 0, 0, 0.2);
+                --transburger-icon-button-color: #fff;
+                --transburger-icon-button-background: #006dbe;
+              }
+              .btn--red {
+                --transburger-icon-button-background: #ed1e42;
+              }
+            </template>
+          </code-sample>
+        </resizable-panels>
+
+      </div>
+    </div>
+
+    <paper-toast id="toast"></paper-toast>
+
+    <script>
+      (function() {
+        const toast = document.querySelector('#toast');
+        document.addEventListener('transburger-icon-changed', e => {
+          let html = `
+            <div class="toast-text"><span>Event:</span> transburger-icon-changed</div>
+            <div class="toast-text"><span>Detail:</span> { icon: ${e.detail.icon} }`;
+          toast.innerHTML = html;
+          if (toast.opened) {
+            toast.opened = false;
+          }
+
+          toast.opened = true;
+        });
+      }());
+    </script>
+  </body>
+</html>

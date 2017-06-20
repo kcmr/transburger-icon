@@ -1,0 +1,133 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="transburger-icon-styles.html">
+
+<dom-module id="transburger-icon">
+  <template>
+    <style include="transburger-icon-styles"></style>
+
+    <button type$="[[type]]" disabled$="[[disabled]]" on-click="_onClick">
+      <div class="t-icon-wrapper">
+        <div class$="t-icon t-icon--{{transformTo}}" id="icon">
+          <div class="t-icon__middle"></div>
+        </div>
+
+        <div class="t-icon-content">
+          <slot></slot>
+        </div>
+      </div>
+    </button>
+
+  </template>
+  <script>
+    (function() {
+      'use strict';
+
+      /**
+       * `<transburger-icon>` is a custom element to display a hamburger icon that is transformed into a back or close icon after clicking on it or programmatically using its `toggleIcon()` method.
+       *
+       * By default the hamburger icon is transformed into a close icon. Other posible transformations are `arrow-left` and `arrow-right`.
+       * To prevent changing the icon when the button is clicked, add `no-transform` attribute.
+       *
+       * Check out component's README.md for information about available custom CSS properties.
+       *
+       * @customElement
+       * @polymer
+       * @demo demo/index.html
+       */
+      class TransburgerIcon extends Polymer.Element {
+        static get is() {
+          return 'transburger-icon';
+        }
+
+        static get properties() {
+          return {
+            /**
+             * Hamburger icon transformation.
+             * Possible values: `close`, `arrow-left`, `arrow-right`.
+             */
+            transformTo: {
+              type: String,
+              value: 'close'
+            },
+
+            /**
+             * Where to place the hamburger icon when the button has text
+             * or other contents inside it.
+             * Possible values: `left`, `right`.
+             */
+            iconPosition: {
+              type: String,
+              value: 'left',
+              reflectToAttribute: true
+            },
+
+            /**
+             * If true, the second icon will be shown initially.
+             */
+            active: {
+              type: Boolean,
+              value: false,
+              observer: '_activeObserver'
+            },
+
+            /**
+             * If true, the icon won't be changed after clicking the button.
+             * Use this attribute if you need to change the icon programmatically.
+             */
+            noTransform: {
+              type: Boolean,
+              value: false
+            },
+
+            /**
+             * Button type (button, submit, etc.)
+             */
+            type: String,
+
+            /**
+             * Disabled button.
+             */
+            disabled: {
+              type: Boolean,
+              value: false
+            }
+          };
+        }
+
+        constructor() {
+          super();
+        }
+
+        /**
+         * Changes the icon.
+         */
+        toggleIcon() {
+          this.active = !this.active;
+        }
+
+        /**
+         * Fired when the icon is changed.
+         * @event transburger-icon-changed
+         * @param {{icon: String}} detail Icon displayed.
+         */
+        _activeObserver(active) {
+          this.$.icon.classList.toggle('is-active', active);
+          this.dispatchEvent(new CustomEvent('transburger-icon-changed', {
+            detail: { icon: active ? this.transformTo : 'menu' },
+            bubbles: true, composed: true
+          }));
+        }
+
+        _onClick() {
+          if (this.noTransform) {
+            return;
+          }
+
+          this.toggleIcon();
+        }
+      }
+
+      customElements.define(TransburgerIcon.is, TransburgerIcon);
+    }());
+  </script>
+</dom-module>
