@@ -38,7 +38,8 @@
       test('Clicking on transburger-icon[no-transform] should not change icon', function() {
         var icon = btnNoTransform.shadowRoot.querySelector('#icon');
         var initialIconClass = icon.className;
-        btnNoTransform.toggleIcon();
+        var button = btnNoTransform.shadowRoot.querySelector('button');
+        button.click();
         assert.equal(initialIconClass, icon.className);
       });
 
@@ -46,6 +47,20 @@
         var initialIconClass = btnDefaultIcon.className;
         btnDefault.toggleIcon();
         assert.notEqual(initialIconClass, btnDefaultIcon.className);
+      });
+
+      test('toggleIcon() method should change icon when noTransform is set to true', function() {
+        var icon = btnNoTransform.shadowRoot.querySelector('#icon');
+        var initialIconClass = icon.className;
+        btnNoTransform.toggleIcon();
+        assert.notEqual(initialIconClass, icon.className);
+      });
+
+      test('Clicking on transburger-icon should call toggleIcon() when noTransform is false', function() {
+        var spy = sinon.spy(btnDefault, 'toggleIcon');
+        var button = btnDefault.shadowRoot.querySelector('button');
+        button.click();
+        assert.isTrue(spy.calledOnce);
       });
 
       test('Adding active boolean attribute should change icon', function() {
