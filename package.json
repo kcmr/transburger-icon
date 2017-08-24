@@ -1,0 +1,12 @@
+{
+  "name": "transburger-icon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kcmr/transburger-icon.git",
+  "author": "Kus Cámara <kcmr@users.noreply.github.com>",
+  "license": "MIT",
+  "flat": true,
+  "dependencies": {
+    "@polymer/polymer": "next"
+  }
+}
