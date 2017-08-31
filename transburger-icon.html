@@ -47,7 +47,8 @@
              */
             transformTo: {
               type: String,
-              value: 'close'
+              value: 'close',
+              notify: true
             },
 
             /**
@@ -67,7 +68,8 @@
             active: {
               type: Boolean,
               value: false,
-              observer: '_activeObserver'
+              observer: '_activeObserver',
+              notify: true
             },
 
             /**
