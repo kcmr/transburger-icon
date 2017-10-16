@@ -64,23 +64,25 @@ The following custom properties are available for styling.
 
 If you want to scale the icon keeping the default proportions, you only need to set the icon height. You can use a value expressed in pixels or the keyword `inherit` to use the button font size. The icon color is the same as the button text color.
 
-| Custom property                             | Description                                                    | Default        |
-|:--------------------------------------------|:---------------------------------------------------------------| :--------------|
-| --transburger-icon-height                   | Icon height in pixels. For better results, use multiples of 7  | 14px           |
-| --transburger-icon-width                    | Icon width                                                     | 1.42857em      |
-| --transburger-icon-margin                   | Vertical and horizontal margins                                | 0.85714em      |
-| --transburger-icon-line-radius              | Hamburger icon lines radius                                    | 2px            |
-| --transburger-icon-button-border            | Border applied to the button                                   | 0              |
-| --transburger-icon-button-margin            | Margin applied to the button                                   | 0              |
-| --transburger-icon-button-padding           | Padding applied to the button                                  | 0              |
-| --transburger-icon-button-vertical-align    | vertical-align applied to the button                           | middle         |
-| --transburger-icon-button-font-family       | font-family applied to the button                              | inherit        |
-| --transburger-icon-button-color             | color applied to the button                                    | inherit        |
-| --transburger-icon-button-outline           | outline applied to the button                                  | initial        |
-| --transburger-icon-button-cursor            | cursor applied to the button                                   | initial        |
-| --transburger-icon-button-border-radius     | border-radius applied to the button                            | initial        |
-| --transburger-icon-button-border-box-shadow | box-shadow applied to the button                               | none           |
-| --transburger-icon-button-border-background | background applied to the button                               | #ccc           |
+Custom property | Description | Default
+:--- | :--- | :---
+--transburger-icon-button-background | Button background | #ccc
+--transburger-icon-button-border | Border applied to the button | 0
+--transburger-icon-button-border-radius | border-radius applied to the button | initial
+--transburger-icon-button-box-shadow | Button box-shadow | none
+--transburger-icon-button-color | color applied to the button | inherit
+--transburger-icon-button-cursor | cursor applied to the button | initial
+--transburger-icon-button-font-family | font-family applied to the button | inherit
+--transburger-icon-button-font-size | Button font-size | var(--transburger-icon-height, 14px)
+--transburger-icon-button-margin | Margin applied to the button | 0
+--transburger-icon-button-outline | outline applied to the button | initial
+--transburger-icon-button-overflow | Button overflow | visible
+--transburger-icon-button-padding | Padding applied to the button | 0
+--transburger-icon-button-vertical-align | vertical-align applied to the button | middle
+--transburger-icon-height | Icon height in pixels. For better results, use multiples of 7 | 14px
+--transburger-icon-line-radius | Hamburger icon lines radius | 2px
+--transburger-icon-margin | Vertical and horizontal margins | 0.85714em
+--transburger-icon-width | Icon width | 1.42857em
 
 ## Accessibility
 
