@@ -93,7 +93,7 @@ button {
   &::after,
   &::before {
     width: 100%;
-    height: em(2, 14);
+    height: var(--transburger-icon-lines-height, 2px);
     background: currentColor;
     border-radius: var(--transburger-icon-line-radius, 2px);
     position: absolute;
@@ -104,6 +104,7 @@ button {
   &::before {
     content: "";
     display: block;
+    @apply  --transburger-icon-top-bottom-lines;
   }
 
   &::before { top: 0; }
@@ -187,12 +188,14 @@ button {
         bottom: 0;
         transform: rotate(45deg);
         transition: bottom .2s ease, transform .2s .24s ease;
+        @apply --transburger-icon-close-top-bottom-lines-active;
       }
 
       &::after {
         top: 0;
         transform: rotate(-45deg);
         transition: top .2s ease, transform .2s .24s ease;
+        @apply --transburger-icon-close-top-bottom-lines-active;
       }
     }
   }

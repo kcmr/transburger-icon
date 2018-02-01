@@ -45,14 +45,15 @@ button {
   position: relative; }
   .t-icon__middle, .t-icon::after, .t-icon::before {
     width: 100%;
-    height: 0.14286em;
+    height: var(--transburger-icon-lines-height, 2px);
     background: currentColor;
     border-radius: var(--transburger-icon-line-radius, 2px);
     position: absolute;
     margin: auto; }
   .t-icon::after, .t-icon::before {
     content: "";
-    display: block; }
+    display: block;
+    @apply --transburger-icon-top-bottom-lines; }
   .t-icon::before {
     top: 0; }
   .t-icon::after {
@@ -99,13 +100,15 @@ button {
             transform: rotate(45deg);
     transition: bottom .2s ease, -webkit-transform .2s .24s ease;
     transition: bottom .2s ease, transform .2s .24s ease;
-    transition: bottom .2s ease, transform .2s .24s ease, -webkit-transform .2s .24s ease; }
+    transition: bottom .2s ease, transform .2s .24s ease, -webkit-transform .2s .24s ease;
+    @apply --transburger-icon-close-top-bottom-lines-active; }
   .t-icon--close.is-active::after {
     top: 0;
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
     transition: top .2s ease, -webkit-transform .2s .24s ease;
     transition: top .2s ease, transform .2s .24s ease;
-    transition: top .2s ease, transform .2s .24s ease, -webkit-transform .2s .24s ease; }
+    transition: top .2s ease, transform .2s .24s ease, -webkit-transform .2s .24s ease;
+    @apply --transburger-icon-close-top-bottom-lines-active; }
 
 </style></template></dom-module>

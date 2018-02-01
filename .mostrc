@@ -1,0 +1,6 @@
+{
+  "css-api": {
+    "file": "{{component}}-styles.html",
+    "docs": "README.md"
+  }
+}
