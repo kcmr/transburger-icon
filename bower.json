@@ -1,8 +1,10 @@
 {
   "name": "transburger-icon",
-  "version": "3.0.1",
+  "version": "3.2.0",
   "authors": [
-    "Kus Cámara"
+    "Kus Cámara",
+    "Wrecktoria",
+    "remote"
   ],
   "description": "A button with a transformable hamburger menu icon",
   "keywords": [
@@ -14,10 +16,10 @@
   ],
   "main": "transburger-icon.html",
   "license": "MIT",
-  "homepage": "https://github.com/kcmr/transburger-icon/",
+  "homepage": "https://github.com/kisscalls/transburger-icon/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/kcmr/transburger-icon.git"
+    "url": "git://github.com/kisscalls/transburger-icon.git"
   },
   "ignore": [
     "/.*",
