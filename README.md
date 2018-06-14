@@ -2,6 +2,9 @@
 
 [![Build Status](https://img.shields.io/travis/kcmr/transburger-icon/master.svg?style=flat-square)](https://travis-ci.org/kcmr/transburger-icon) 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://www.webcomponents.org/element/kcmr/transburger-icon)
+  
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg?style=flat-square)](https://vaadin.com/directory/component/kcmrtransburger-icon)
+[![Stars on vaadin.com/directory](https://img.shields.io/vaadin-directory/star/kcmrtransburger-icon.svg?style=flat-square)](https://vaadin.com/directory/component/kcmrtransburger-icon)
 
 `<transburger-icon>` is a custom element to display a hamburger icon that is transformed into a back or close icon after clicking on it or programmatically using its `toggleIcon()` method.
 
