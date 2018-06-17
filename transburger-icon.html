@@ -19,9 +19,7 @@
 
   </template>
   <script>
-    (function() {
-      'use strict';
-
+    {
       /**
        * `<transburger-icon>` is a custom element to display a hamburger icon that is transformed into a back or close icon after clicking on it or programmatically using its `toggleIcon()` method.
        *
@@ -94,10 +92,6 @@
           };
         }
 
-        constructor() {
-          super();
-        }
-
         /**
          * Changes the icon.
          */
@@ -128,6 +122,6 @@
       }
 
       customElements.define(TransburgerIcon.is, TransburgerIcon);
-    }());
+    }
   </script>
 </dom-module>
